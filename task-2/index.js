@@ -2,17 +2,17 @@
 
 var formElement = document.forms['formElement'];
 
-formElement.onfocus = function(evt) {
+formElement.addEventListener('click', function(evt) {
     var activeElement = formElement.querySelector('.focused');
 	if (activeElement) {
 	    activeElement.classList.remove('focused');
     }
     evt.target.classList.add('focused');
-};
+}, true)
 
-formElement.onblur = function(evt) {
+formElement.addEventListener('blur', function(evt) {
 	var activeElement = formElement.querySelector('.focused');
     if (activeElement) {
      	activeElement.classList.remove('focused');   
     }
-};
+}, true);
